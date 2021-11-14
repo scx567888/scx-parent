@@ -1,0 +1,534 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://maven.apache.org/POM/4.0.0"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>cool.scx</groupId>
+    <artifactId>scx-parent</artifactId>
+    <packaging>pom</packaging>
+    <name>scx-parent</name>
+
+    <version>1.1.0</version>
+
+    <description>SCX Parent</description>
+    <url>https://github.com/scx567888/scx-parent</url>
+
+    <developers>
+        <developer>
+            <id>scx567888</id>
+            <name>scx567888</name>
+            <email>scx567888@outlook.com</email>
+        </developer>
+    </developers>
+
+    <licenses>
+        <license>
+            <name>MIT License</name>
+            <url>https://github.com/scx567888/scx-parent/blob/master/LICENSE</url>
+        </license>
+    </licenses>
+
+    <scm>
+        <connection>scm:git:https://github.com/scx567888/scx-parent.git</connection>
+        <developerConnection>scm:git:https://github.com/scx567888/scx-parent.git</developerConnection>
+        <url>https://github.com/scx567888/scx-parent</url>
+    </scm>
+
+    <build>
+
+        <pluginManagement>
+            <!-- 以下插件的排列顺序是按照 maven 生命周期的顺序 -->
+            <plugins>
+
+                <!-- 资源插件 -->
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-resources-plugin</artifactId>
+                    <version>${maven.resources.plugin.version}</version>
+                    <configuration>
+                        <!-- 编码 -->
+                        <encoding>${scx.encoding}</encoding>
+                    </configuration>
+                </plugin>
+
+                <!-- 此插件用于设置 java 程序编译时的参数 -->
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-compiler-plugin</artifactId>
+                    <version>${maven.compiler.plugin.version}</version>
+                    <configuration>
+                        <compilerArgs>
+                            <!-- 通知 JDK 使编译后 class 文件携带参数名称 -->
+                            <arg>-parameters</arg>
+                        </compilerArgs>
+                        <!-- 编码 -->
+                        <encoding>${scx.encoding}</encoding>
+                        <!-- 指定编译时的 JDK 版本 -->
+                        <source>${_java.version}</source>
+                        <target>${_java.version}</target>
+                    </configuration>
+                </plugin>
+
+                <!-- 设置测试 -->
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-surefire-plugin</artifactId>
+                    <version>${maven.surefire.plugin.version}</version>
+                    <configuration>
+                        <!-- 编码字符集 -->
+                        <encoding>${scx.encoding}</encoding>
+                        <!-- 是否忽略失败的单元测试 -->
+                        <testFailureIgnore>false</testFailureIgnore>
+                    </configuration>
+                </plugin>
+
+                <!-- 此插件用于将项目打包为 可执行 jar 包-->
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-jar-plugin</artifactId>
+                    <version>${maven.jar.plugin.version}</version>
+                    <configuration>
+                        <!-- 此处我们将主类加入到描述文件中 方便程序启动 -->
+                        <archive>
+                            <manifest>
+                                <!-- 添加 classpath 到描述文件中 -->
+                                <addClasspath>true</addClasspath>
+                                <!-- classpath 前缀 -->
+                                <classpathPrefix>lib</classpathPrefix>
+                                <!-- 默认启动类 -->
+                                <mainClass>${scx.mainClass}</mainClass>
+                            </manifest>
+                        </archive>
+                        <!-- 此处因为没有类似 maven-source-plugin 插件中 excludeResources 的选项 -->
+                        <!-- 所以在这里手动排除资源文件 , 具体文件说明见下方 -->
+                        <excludes>
+                            <!-- 默认模板测试文件 -->
+                            <exclude>/c/</exclude>
+                            <!-- 默认 ssl 占位空文件 -->
+                            <exclude>/ssl/</exclude>
+                            <!-- 默认 配置文件 -->
+                            <exclude>/*.json</exclude>
+                            <exclude>/*.xml</exclude>
+                        </excludes>
+                    </configuration>
+                </plugin>
+
+                <!-- 此插件用于打包源码 -->
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-source-plugin</artifactId>
+                    <version>${maven.source.plugin.version}</version>
+                    <!-- executions 表示要执行的操作 -->
+                    <executions>
+                        <execution>
+                            <id>scx-source-jar-no-fork</id>
+                            <!-- 执行 jar-no-fork -->
+                            <goals>
+                                <goal>jar-no-fork</goal>
+                            </goals>
+                        </execution>
+                    </executions>
+                    <configuration>
+                        <!-- 在打包时排除所有资源文件 -->
+                        <excludeResources>true</excludeResources>
+                    </configuration>
+                </plugin>
+
+                <!-- 此插件用于打包 java doc -->
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-javadoc-plugin</artifactId>
+                    <version>${maven.javadoc.plugin.version}</version>
+                    <configuration>
+                        <!-- 生成的 Html 页面字符集 -->
+                        <charset>${scx.encoding}</charset>
+                        <!-- 生成的 Html 文件编码  -->
+                        <docencoding>${scx.encoding}</docencoding>
+                        <!-- (source) 源文件 编码 -->
+                        <encoding>${scx.encoding}</encoding>
+                        <!-- 默认作者 -->
+                        <defaultAuthor>scx567888</defaultAuthor>
+                        <!-- javadoc:fix 修复级别 (private 为全部修复) -->
+                        <level>private</level>
+                    </configuration>
+                    <executions>
+                        <execution>
+                            <id>scx-javadoc-jar</id>
+                            <!-- 这里将生命周期延后到 verify (验证阶段) , 因为目前只有 install 和 deploy 时才需要 javadoc -->
+                            <phase>verify</phase>
+                            <!-- 执行 打包 文档 jar -->
+                            <goals>
+                                <goal>jar</goal>
+                            </goals>
+                        </execution>
+                    </executions>
+                </plugin>
+
+                <!-- 对 jar 包等文件进行 gpg 签名  -->
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-gpg-plugin</artifactId>
+                    <version>${maven.gpg.plugin.version}</version>
+                    <executions>
+                        <execution>
+                            <!-- 这里默认的生命周期和 javadoc 相同 , 也是 verify , 但因为顺序靠后所以会在 javadoc 之后执行 -->
+                            <id>scx-gpg-sign</id>
+                            <!-- 执行签名 -->
+                            <goals>
+                                <goal>sign</goal>
+                            </goals>
+                        </execution>
+                    </executions>
+                </plugin>
+
+                <!-- install 插件 此处只是为了规范版本号 -->
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-install-plugin</artifactId>
+                    <version>${maven.install.plugin.version}</version>
+                </plugin>
+
+                <!-- deploy 插件 此处只是为了规范版本号 -->
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-deploy-plugin</artifactId>
+                    <version>${maven.deploy.plugin.version}</version>
+                </plugin>
+
+                <!-- *********************** 以下插件默认不会绑定到任何 maven 生命周期中 *********************** -->
+                <!-- clean 插件 此处只是为了规范版本号 -->
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-clean-plugin</artifactId>
+                    <version>${maven.clean.plugin.version}</version>
+                </plugin>
+
+                <!-- 此插件用于管理项目的依赖项 , 目前会在脚本中单独调用 (不绑定到 maven 的任何生命周期阶段中) . 目前仅用来复制依赖项 -->
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-dependency-plugin</artifactId>
+                    <version>${maven.dependency.plugin.version}</version>
+                    <!-- 复制所需的依赖项(第三方jar包) 到 lib 文件夹下 , 部署时如果有新增的依赖项记得更新部署项目的 lib 文件夹 -->
+                    <configuration>
+                        <outputDirectory>${project.build.directory}/lib</outputDirectory>
+                        <!-- 只包含运行依赖项 -->
+                        <includeScope>compile</includeScope>
+                    </configuration>
+                </plugin>
+
+                <!-- 此插件支持使用 maven 命令直接运行项目 , 方便开发和测试 -->
+                <plugin>
+                    <groupId>org.codehaus.mojo</groupId>
+                    <artifactId>exec-maven-plugin</artifactId>
+                    <version>${maven.exec.maven.plugin.version}</version>
+                    <configuration>
+                        <mainClass>${scx.mainClass}</mainClass>
+                    </configuration>
+                </plugin>
+
+            </plugins>
+        </pluginManagement>
+
+        <plugins>
+
+            <!-- 资源插件 -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-resources-plugin</artifactId>
+            </plugin>
+
+            <!-- 此插件用于设置 java 程序编译时的参数 -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+            </plugin>
+
+            <!-- 设置测试 -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+            </plugin>
+
+            <!-- 此插件用于将项目打包为 可执行 jar 包-->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
+            </plugin>
+
+            <!-- 此插件用于打包源码 -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-source-plugin</artifactId>
+            </plugin>
+
+            <!-- 此插件用于打包 java doc -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-javadoc-plugin</artifactId>
+            </plugin>
+
+            <!-- 对 jar 包等文件进行 gpg 签名  -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-gpg-plugin</artifactId>
+            </plugin>
+
+            <!-- install 插件 此处只是为了规范版本号 -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-install-plugin</artifactId>
+            </plugin>
+
+            <!-- deploy 插件 此处只是为了规范版本号 -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-deploy-plugin</artifactId>
+            </plugin>
+
+            <!-- *********************** 以下插件默认不会绑定到任何 maven 生命周期中 *********************** -->
+            <!-- clean 插件 此处只是为了规范版本号 -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-clean-plugin</artifactId>
+            </plugin>
+
+            <!-- 此插件用于管理项目的依赖项 , 目前会在脚本中单独调用 (不绑定到 maven 的任何生命周期阶段中) . 目前仅用来复制依赖项 -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-dependency-plugin</artifactId>
+            </plugin>
+
+            <!-- 此插件支持使用 maven 命令直接运行项目 , 方便开发和测试 -->
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>exec-maven-plugin</artifactId>
+            </plugin>
+
+        </plugins>
+
+    </build>
+
+    <dependencyManagement>
+        <dependencies>
+
+            <!-- vert.x 网络拓展包 -->
+            <dependency>
+                <groupId>io.vertx</groupId>
+                <artifactId>vertx-web</artifactId>
+                <version>${vertx.version}</version>
+            </dependency>
+
+            <!-- vert.x 核心包 -->
+            <dependency>
+                <groupId>io.vertx</groupId>
+                <artifactId>vertx-core</artifactId>
+                <version>${vertx.version}</version>
+            </dependency>
+
+            <!-- Jackson 核心包 -->
+            <dependency>
+                <groupId>com.fasterxml.jackson.core</groupId>
+                <artifactId>jackson-core</artifactId>
+                <version>${jackson.version}</version>
+            </dependency>
+
+            <!-- Jackson 数据绑定包 -->
+            <dependency>
+                <groupId>com.fasterxml.jackson.core</groupId>
+                <artifactId>jackson-databind</artifactId>
+                <version>${jackson.version}</version>
+            </dependency>
+
+            <!-- Jackson 注解包 -->
+            <dependency>
+                <groupId>com.fasterxml.jackson.core</groupId>
+                <artifactId>jackson-annotations</artifactId>
+                <version>${jackson.version}</version>
+            </dependency>
+
+            <!-- Jackson 数据类型拓展包 针对 (jsr310)[https://jcp.org/en/jsr/detail?id=310] -->
+            <!-- 添加了对新的时间和日期Api (LocalDateTime、DateTimeFormatter) 等的支持 -->
+            <dependency>
+                <groupId>com.fasterxml.jackson.datatype</groupId>
+                <artifactId>jackson-datatype-jsr310</artifactId>
+                <version>${jackson.version}</version>
+            </dependency>
+
+            <!-- Spring Beans 框架 , 主要使用其依赖注入及部分注解功能 -->
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-beans</artifactId>
+                <version>${spring-framework.version}</version>
+            </dependency>
+
+            <!-- Spring Context 框架 , 主要使用其依赖注入及部分注解功能 -->
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-context</artifactId>
+                <version>${spring-framework.version}</version>
+            </dependency>
+
+            <!-- 数据库连接池 用于减少数据库连接创建时的性能消耗 -->
+            <dependency>
+                <groupId>com.zaxxer</groupId>
+                <artifactId>HikariCP</artifactId>
+                <version>${hikaricp.version}</version>
+            </dependency>
+
+            <!-- Freemarker 用于前台页面渲染工作 -->
+            <dependency>
+                <groupId>org.freemarker</groupId>
+                <artifactId>freemarker</artifactId>
+                <version>${freemarker.version}</version>
+            </dependency>
+
+            <!-- 轻量级的加密解密工具包 ,用于一些密码校验及敏感数据加密 -->
+            <dependency>
+                <groupId>org.jasypt</groupId>
+                <artifactId>jasypt</artifactId>
+                <version>${jasypt.version}</version>
+            </dependency>
+
+            <!-- 图像处理包工具包 , 用于对图片进行简单的处理,如 切割,缩放 ,转码等 -->
+            <dependency>
+                <groupId>net.coobird</groupId>
+                <artifactId>thumbnailator</artifactId>
+                <version>${thumbnailator.version}</version>
+            </dependency>
+
+            <!-- Google Guava -->
+            <dependency>
+                <groupId>com.google.guava</groupId>
+                <artifactId>guava</artifactId>
+                <version>${guava.version}</version>
+            </dependency>
+
+            <!-- 操作 二维码 -->
+            <dependency>
+                <groupId>com.google.zxing</groupId>
+                <artifactId>core</artifactId>
+                <version>${zxing.version}</version>
+            </dependency>
+
+            <!-- 操作 二维码 JAVA SE 拓展包 -->
+            <dependency>
+                <groupId>com.google.zxing</groupId>
+                <artifactId>javase</artifactId>
+                <version>${zxing.version}</version>
+            </dependency>
+
+            <!-- 操作 office -->
+            <dependency>
+                <groupId>org.apache.poi</groupId>
+                <artifactId>poi-ooxml</artifactId>
+                <version>${poi.version}</version>
+            </dependency>
+
+            <!-- mysql 驱动 -->
+            <dependency>
+                <groupId>mysql</groupId>
+                <artifactId>mysql-connector-java</artifactId>
+                <version>${mysql-connector-j.version}</version>
+            </dependency>
+
+            <!-- slf4j 日志框架 -->
+            <dependency>
+                <groupId>org.slf4j</groupId>
+                <artifactId>slf4j-api</artifactId>
+                <version>${slf4j.version}</version>
+            </dependency>
+
+            <!-- log4j2 -->
+            <dependency>
+                <groupId>org.apache.logging.log4j</groupId>
+                <artifactId>log4j-api</artifactId>
+                <version>${log4j2.version}</version>
+            </dependency>
+
+            <!-- log4j2 核心包 -->
+            <dependency>
+                <groupId>org.apache.logging.log4j</groupId>
+                <artifactId>log4j-core</artifactId>
+                <version>${log4j2.version}</version>
+            </dependency>
+
+            <!-- 用于 log4j 与 slf4j 之间的桥接 -->
+            <dependency>
+                <groupId>org.apache.logging.log4j</groupId>
+                <artifactId>log4j-slf4j18-impl</artifactId>
+                <version>${log4j2.version}</version>
+            </dependency>
+
+            <!-- ******************* TestNG 测试包 ********************** -->
+            <dependency>
+                <groupId>org.testng</groupId>
+                <artifactId>testng</artifactId>
+                <version>${testng.version}</version>
+            </dependency>
+
+        </dependencies>
+    </dependencyManagement>
+
+    <distributionManagement>
+        <snapshotRepository>
+            <id>sonatype-nexus-snapshots</id>
+            <name>Sonatype Nexus Snapshots</name>
+            <url>https://oss.sonatype.org/content/repositories/snapshots/</url>
+        </snapshotRepository>
+        <repository>
+            <id>sonatype-nexus-staging</id>
+            <name>Nexus Release Repository</name>
+            <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+        </repository>
+    </distributionManagement>
+
+    <properties>
+
+        <!-- ********************** java (jdk) 版本 ********************** -->
+        <_java.version>17</_java.version>
+        <maven.compiler.source>${_java.version}</maven.compiler.source>
+        <maven.compiler.target>${_java.version}</maven.compiler.target>
+
+        <!-- ************* 项目构建时的字符集编码 建议采用 UTF-8 ************* -->
+        <scx.encoding>UTF-8</scx.encoding>
+        <project.build.sourceEncoding>${scx.encoding}</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>${scx.encoding}</project.reporting.outputEncoding>
+
+        <!-- ***************** 构建可执行jar时的默认启动类 ***************** -->
+        <scx.mainClass>null</scx.mainClass>
+
+        <!-- *********************** 以下为依赖包版本 *********************** -->
+        <vertx.version>4.2.1</vertx.version>
+        <jackson.version>2.13.0</jackson.version>
+        <spring-framework.version>5.3.13</spring-framework.version>
+        <hikaricp.version>5.0.0</hikaricp.version>
+        <freemarker.version>2.3.31</freemarker.version>
+        <jasypt.version>1.9.3</jasypt.version>
+        <thumbnailator.version>0.4.14</thumbnailator.version>
+        <guava.version>31.0.1-jre</guava.version>
+        <zxing.version>3.4.1</zxing.version>
+        <poi.version>5.1.0</poi.version>
+        <mysql-connector-j.version>8.0.27</mysql-connector-j.version>
+        <slf4j.version>2.0.0-alpha5</slf4j.version>
+        <log4j2.version>2.14.1</log4j2.version>
+
+        <!-- ********************* 以下为测试依赖包版本 ********************** -->
+        <testng.version>7.4.0</testng.version>
+
+        <!-- ************************ 以下为插件版本 ************************ -->
+        <maven.resources.plugin.version>3.2.0</maven.resources.plugin.version>
+        <maven.compiler.plugin.version>3.8.1</maven.compiler.plugin.version>
+        <maven.surefire.plugin.version>3.0.0-M5</maven.surefire.plugin.version>
+        <maven.jar.plugin.version>3.2.0</maven.jar.plugin.version>
+        <maven.source.plugin.version>3.2.1</maven.source.plugin.version>
+        <maven.javadoc.plugin.version>3.3.1</maven.javadoc.plugin.version>
+        <maven.gpg.plugin.version>3.0.1</maven.gpg.plugin.version>
+        <maven.install.plugin.version>3.0.0-M1</maven.install.plugin.version>
+        <maven.deploy.plugin.version>3.0.0-M1</maven.deploy.plugin.version>
+        <maven.clean.plugin.version>3.1.0</maven.clean.plugin.version>
+        <maven.dependency.plugin.version>3.2.0</maven.dependency.plugin.version>
+        <maven.exec.maven.plugin.version>3.0.0</maven.exec.maven.plugin.version>
+
+    </properties>
+
+</project>
