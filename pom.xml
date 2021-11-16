@@ -8,7 +8,7 @@
     <packaging>pom</packaging>
     <name>scx-parent</name>
 
-    <version>1.1.0</version>
+    <version>1.1.1</version>
 
     <description>SCX Parent</description>
     <url>https://github.com/scx567888/scx-parent</url>
@@ -97,6 +97,8 @@
                                 <classpathPrefix>lib</classpathPrefix>
                                 <!-- 默认启动类 -->
                                 <mainClass>${scx.mainClass}</mainClass>
+                                <!-- 添加默认实现条目 -->
+                                <addDefaultImplementationEntries>true</addDefaultImplementationEntries>
                             </manifest>
                         </archive>
                         <!-- 此处因为没有类似 maven-source-plugin 插件中 excludeResources 的选项 -->
