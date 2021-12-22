@@ -500,7 +500,7 @@
         <scx.mainClass>null</scx.mainClass>
 
         <!-- *********************** 以下为依赖包版本 *********************** -->
-        <vertx.version>4.2.2</vertx.version>
+        <vertx.version>4.2.3</vertx.version>
         <jackson.version>2.13.1</jackson.version>
         <spring-framework.version>5.3.14</spring-framework.version>
         <hikaricp.version>5.0.0</hikaricp.version>
