@@ -8,7 +8,7 @@
     <packaging>pom</packaging>
     <name>scx-parent</name>
 
-    <version>1.1.9</version>
+    <version>1.2.0</version>
 
     <description>SCX Parent</description>
     <url>https://github.com/scx567888/scx-parent</url>
@@ -398,7 +398,14 @@
                 <version>${freemarker.version}</version>
             </dependency>
 
-            <!-- 轻量级的加密解密工具包 ,用于一些密码校验及敏感数据加密 -->
+            <!-- 轻量级密码术包 (用于拓展 jdk 自带的加密解密实现) 可以和 jasypt 配合使用 -->
+            <dependency>
+                <groupId>org.bouncycastle</groupId>
+                <artifactId>bcprov-jdk15on</artifactId>
+                <version>${bouncycastle.version}</version>
+            </dependency>
+
+            <!-- 轻量级的加密解密工具包 , 用于简化一些密码校验及敏感数据加密的操作 -->
             <dependency>
                 <groupId>org.jasypt</groupId>
                 <artifactId>jasypt</artifactId>
@@ -505,6 +512,7 @@
         <spring-framework.version>5.3.14</spring-framework.version>
         <hikaricp.version>5.0.0</hikaricp.version>
         <freemarker.version>2.3.31</freemarker.version>
+        <bouncycastle.version>1.60</bouncycastle.version>
         <jasypt.version>1.9.3</jasypt.version>
         <thumbnailator.version>0.4.15</thumbnailator.version>
         <guava.version>31.0.1-jre</guava.version>

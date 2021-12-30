@@ -26,7 +26,7 @@
         <img src="https://img.shields.io/badge/Jackson-ff8000" alt="Jackson"/>
     </a>
     <a target="_blank" href="https://github.com/spring-projects/spring-framework">
-        <img src="https://img.shields.io/badge/Spring Framework-d8b125" alt="Spring-Framework"/>
+        <img src="https://img.shields.io/badge/Spring Framework-d8b125" alt="Spring Framework"/>
     </a>
     <a target="_blank" href="https://github.com/brettwooldridge/HikariCP">
         <img src="https://img.shields.io/badge/HikariCP-98c510" alt="HikariCP"/>
@@ -34,24 +34,27 @@
     <a target="_blank" href="https://github.com/apache/freemarker">
         <img src="https://img.shields.io/badge/FreeMarker-44be16" alt="FreeMarker"/>
     </a>
+    <a target="_blank" href="https://github.com/bcgit/bc-java">
+        <img src="https://img.shields.io/badge/Bouncy Castle-37b484" alt="Bouncy Castle"/>
+    </a>
     <a target="_blank" href="https://github.com/jasypt/jasypt">
-        <img src="https://img.shields.io/badge/Jasypt-37b484" alt="Jasypt"/>
+        <img src="https://img.shields.io/badge/Jasypt-29aaf5" alt="Jasypt"/>
     </a>
     <a target="_blank" href="https://github.com/coobird/thumbnailator">
-        <img src="https://img.shields.io/badge/Thumbnailator-29aaf5" alt="Thumbnailator"/>
+        <img src="https://img.shields.io/badge/Thumbnailator-6269d3" alt="Thumbnailator"/>
     </a>
     <a target="_blank" href="https://github.com/google/guava">
-        <img src="https://img.shields.io/badge/Guava-6269d3" alt="Guava"/>
-    </a>
-    <a target="_blank" href="https://github.com/zxing/zxing">
-        <img src="https://img.shields.io/badge/ZXing-9c27b0" alt="ZXing"/>
+        <img src="https://img.shields.io/badge/Guava-9c27b0" alt="Guava"/>
     </a>
     <br/>
+    <a target="_blank" href="https://github.com/zxing/zxing">
+        <img src="https://img.shields.io/badge/ZXing-f44336" alt="ZXing"/>
+    </a>
     <a target="_blank" href="https://github.com/apache/poi">
-        <img src="https://img.shields.io/badge/Apache POI-f44336" alt="Apache POI"/>
+        <img src="https://img.shields.io/badge/Apache POI-ff8000" alt="Apache POI"/>
     </a>
     <a target="_blank" href="https://github.com/mysql/mysql-connector-j">
-        <img src="https://img.shields.io/badge/MySQL Connector/J-ff8000" alt="MySQL Connector/J"/>
+        <img src="https://img.shields.io/badge/MySQL Connector/J-98c510" alt="MySQL Connector/J"/>
     </a>
     <a target="_blank" href="https://github.com/qos-ch/slf4j">
         <img src="https://img.shields.io/badge/SLF4J-44be16" alt="SLF4J"/>
