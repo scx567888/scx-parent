@@ -405,7 +405,7 @@
                 <version>${bouncycastle.version}</version>
             </dependency>
 
-            <!-- 轻量级的加密解密工具包 , 用于一些密码校验及敏感数据加密 -->
+            <!-- 轻量级的加密解密工具包 , 用于简化一些密码校验及敏感数据加密的操作 -->
             <dependency>
                 <groupId>org.jasypt</groupId>
                 <artifactId>jasypt</artifactId>
