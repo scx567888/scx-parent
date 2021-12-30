@@ -512,7 +512,7 @@
         <spring-framework.version>5.3.14</spring-framework.version>
         <hikaricp.version>5.0.0</hikaricp.version>
         <freemarker.version>2.3.31</freemarker.version>
-        <bouncycastle.version>1.60</bouncycastle.version>
+        <bouncycastle.version>1.67</bouncycastle.version>
         <jasypt.version>1.9.3</jasypt.version>
         <thumbnailator.version>0.4.15</thumbnailator.version>
         <guava.version>31.0.1-jre</guava.version>
