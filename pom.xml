@@ -514,7 +514,7 @@
         <freemarker.version>2.3.31</freemarker.version>
         <bouncycastle.version>1.70</bouncycastle.version>
         <jasypt.version>1.9.3</jasypt.version>
-        <thumbnailator.version>0.4.15</thumbnailator.version>
+        <thumbnailator.version>0.4.16</thumbnailator.version>
         <guava.version>31.0.1-jre</guava.version>
         <zxing.version>3.4.1</zxing.version>
         <poi.version>5.1.0</poi.version>
