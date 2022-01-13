@@ -102,16 +102,13 @@
                             </manifest>
                         </archive>
                         <!-- 此处因为没有类似 maven-source-plugin 插件中 excludeResources 的选项 -->
-                        <!-- 所以在这里手动排除资源文件 , 具体文件说明见下方 -->
-                        <excludes>
-                            <!-- 默认模板测试文件 -->
-                            <exclude>/c/</exclude>
-                            <!-- 默认 ssl 占位空文件 -->
-                            <exclude>/ssl/</exclude>
-                            <!-- 默认 配置文件 -->
-                            <exclude>/*.json</exclude>
-                            <exclude>/*.xml</exclude>
-                        </excludes>
+                        <!-- 示例 : 所以在这里手动排除资源文件 , 具体文件说明见下方 -->
+                        <!-- <excludes> -->
+                        <!-- 默认 ssl 占位空文件 -->
+                        <!-- <exclude>/ssl/</exclude> -->
+                        <!-- 默认 配置文件 -->
+                        <!-- <exclude>/*.json</exclude> -->
+                        <!-- </excludes> -->
                     </configuration>
                 </plugin>
 
@@ -171,6 +168,10 @@
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-gpg-plugin</artifactId>
                     <version>${maven.gpg.plugin.version}</version>
+                    <configuration>
+                        <!-- 这里默认跳过签名 -->
+                        <skip>true</skip>
+                    </configuration>
                     <executions>
                         <execution>
                             <!-- 这里默认的生命周期和 javadoc 相同 , 也是 verify , 但因为顺序靠后所以会在 javadoc 之后执行 -->
@@ -273,6 +274,10 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-gpg-plugin</artifactId>
+                <configuration>
+                    <!-- 这里启用签名 -->
+                    <skip>false</skip>
+                </configuration>
             </plugin>
 
             <!-- install 插件 此处只是为了规范版本号 -->
