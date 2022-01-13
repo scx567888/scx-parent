@@ -274,6 +274,10 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-gpg-plugin</artifactId>
+                <configuration>
+                    <!-- 这里启用签名 -->
+                    <skip>false</skip>
+                </configuration>
             </plugin>
 
             <!-- install 插件 此处只是为了规范版本号 -->
