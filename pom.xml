@@ -102,13 +102,13 @@
                             </manifest>
                         </archive>
                         <!-- 此处因为没有类似 maven-source-plugin 插件中 excludeResources 的选项 -->
-                        <!-- 示例 : 所以在这里手动排除资源文件 , 具体文件说明见下方 -->
-                        <!-- <excludes> -->
-                        <!-- 默认 ssl 占位空文件 -->
-                        <!-- <exclude>/ssl/</exclude> -->
-                        <!-- 默认 配置文件 -->
-                        <!-- <exclude>/*.json</exclude> -->
-                        <!-- </excludes> -->
+                        <!-- 所以如果需要在这里手动排除资源文件 , 请参照下方示例 -->
+                        <excludes>
+                            <!-- 排除 xxx 文件夹 -->
+                            <!-- <exclude>/xxx/</exclude> -->
+                            <!-- 排除所有 json 文件 -->
+                            <!-- <exclude>/*.json</exclude> -->
+                        </excludes>
                     </configuration>
                 </plugin>
 
