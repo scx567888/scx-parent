@@ -524,7 +524,7 @@
         <zxing.version>3.4.1</zxing.version>
         <poi.version>5.1.0</poi.version>
         <mysql-connector-j.version>8.0.27</mysql-connector-j.version>
-        <slf4j.version>2.0.0-alpha5</slf4j.version>
+        <slf4j.version>2.0.0-alpha6</slf4j.version>
         <log4j2.version>2.17.1</log4j2.version>
 
         <!-- ********************* 以下为测试依赖包版本 ********************** -->
