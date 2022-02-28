@@ -8,7 +8,7 @@
     <packaging>pom</packaging>
     <name>scx-parent</name>
 
-    <version>1.2.6</version>
+    <version>1.2.7</version>
 
     <description>SCX Parent</description>
     <url>https://github.com/scx567888/scx-parent</url>
