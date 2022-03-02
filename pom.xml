@@ -231,6 +231,10 @@
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-site-plugin</artifactId>
                     <version>${maven.site.plugin.version}</version>
+                    <configuration>
+                        <!-- 默认跳过站点生成 -->
+                        <skip>true</skip>
+                    </configuration>
                 </plugin>
 
                 <!-- 此插件支持使用 maven 命令直接运行项目 , 方便开发和测试 -->
