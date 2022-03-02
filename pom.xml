@@ -219,6 +219,13 @@
                     </configuration>
                 </plugin>
 
+                <!-- 此插件用于生成有关项目的报告信息 -->
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-project-info-reports-plugin</artifactId>
+                    <version>${maven.project.info.reports.plugin.version}</version>
+                </plugin>
+
                 <!-- 此插件用于为项目生成站点, 几乎用不到 -->
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
@@ -555,6 +562,7 @@
         <maven.deploy.plugin.version>3.0.0-M2</maven.deploy.plugin.version>
         <maven.clean.plugin.version>3.1.0</maven.clean.plugin.version>
         <maven.dependency.plugin.version>3.2.0</maven.dependency.plugin.version>
+        <maven.project.info.reports.plugin.version>3.2.2</maven.project.info.reports.plugin.version>
         <maven.site.plugin.version>3.3</maven.site.plugin.version>
         <maven.exec.maven.plugin.version>3.0.0</maven.exec.maven.plugin.version>
 
