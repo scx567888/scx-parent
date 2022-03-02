@@ -219,6 +219,13 @@
                     </configuration>
                 </plugin>
 
+                <!-- 此插件用于为项目生成站点, 几乎用不到 -->
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-site-plugin</artifactId>
+                    <version>${maven.site.plugin.version}</version>
+                </plugin>
+
                 <!-- 此插件支持使用 maven 命令直接运行项目 , 方便开发和测试 -->
                 <plugin>
                     <groupId>org.codehaus.mojo</groupId>
@@ -303,6 +310,12 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-dependency-plugin</artifactId>
+            </plugin>
+
+            <!-- 此插件用于为项目生成站点, 几乎用不到 -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-site-plugin</artifactId>
             </plugin>
 
             <!-- 此插件支持使用 maven 命令直接运行项目 , 方便开发和测试 -->
@@ -542,6 +555,7 @@
         <maven.deploy.plugin.version>3.0.0-M2</maven.deploy.plugin.version>
         <maven.clean.plugin.version>3.1.0</maven.clean.plugin.version>
         <maven.dependency.plugin.version>3.2.0</maven.dependency.plugin.version>
+        <maven.site.plugin.version>3.3</maven.site.plugin.version>
         <maven.exec.maven.plugin.version>3.0.0</maven.exec.maven.plugin.version>
 
     </properties>
