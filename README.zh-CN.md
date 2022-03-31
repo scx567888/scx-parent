@@ -67,13 +67,13 @@
     </a>
 </p>
 
-[English](./README.md) | 简体中文
+简体中文 | [English](./README.md)
 
-> Base parent pom for SCX project
+> SCX 项目的基础父 pom
 
-## Quick start
+## 快速开始
 
-#### 1. Import dependency .
+#### 1. 导入依赖 。
 
 ``` xml
 <parent>
@@ -83,4 +83,4 @@
 </parent>
 ```
 
-For more information, see [docs](https://scx.cool/docs/scx/index.html)
+有关更多信息，请参阅 [文档](https://scx.cool/docs/scx/index.html)
