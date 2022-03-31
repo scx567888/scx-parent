@@ -1,12 +1,11 @@
 ﻿$JAVA_HOME = 'C:\Apps\jdk'
-$GIT_HOME = 'C:\Apps\git\cmd'
 $MAVEN_HOME = 'C:\Apps\ideaIU\plugins\maven\lib\maven3\bin'
 
 
 #-----------注意 因为 Powershell 无法正确识别无 BOM 头的 UTF-8 脚本 所以脚本修改后保存时请携带 BOM 头-------------
 #-----------全局变量-------------
 # 当前脚本的版本号
-$SCRIPT_VERSION = '0.0.3'
+$SCRIPT_VERSION = '0.0.4'
 #项目名称
 $PROJECT_NAME = '-'
 #项目版本
@@ -92,7 +91,7 @@ function SetPageCode()
 #设置 临时环境变量
 function SetTempEnvironmentVariables()
 {
-    $PathVariables = $JAVA_HOME + '\bin;' + $GIT_HOME + ';' + $MAVEN_HOME
+    $PathVariables = $JAVA_HOME + '\bin;' + $MAVEN_HOME
     $env:Path = $env:Path + $PathVariables
     $env:JAVA_TOOL_OPTIONS = '-Dfile.encoding=UTF-8 -Duser.language=zh'
     $env:JAVA_HOME = $JAVA_HOME
