@@ -73,7 +73,7 @@ English | [简体中文](./README.zh-CN.md)
 
 ## Quick start
 
-#### 1. Import Maven dependencies .
+### Maven
 
 ``` xml
 <parent>
