@@ -71,9 +71,7 @@ English | [简体中文](./README.zh-CN.md)
 
 > Base parent pom for SCX project
 
-## Quick start
-
-#### 1. Import Maven dependencies .
+## Maven
 
 ``` xml
 <parent>
@@ -81,6 +79,27 @@ English | [简体中文](./README.zh-CN.md)
     <artifactId>scx-parent</artifactId>
     <version>{version}</version>
 </parent>
+```
+
+## Quick start
+
+#### 1. Copy [script.ps1](./script.ps1) to your project root .
+
+```
+your-project
+    ├── src
+    ├── pom.xml
+    └── script.ps1
+```
+
+#### 2. Run [script.ps1](./script.ps1) with PowerShell .
+
+```
+1. Run project
+2. Build project (excluding dependencies)
+3. Build project (including dependencies)
+4. Copy dependencies only
+0. Exit
 ```
 
 For more information, see [docs](https://scx.cool/docs/scx/index.html)

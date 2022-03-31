@@ -71,9 +71,7 @@
 
 > SCX 项目的基础父 pom
 
-## 快速开始
-
-#### 1. 导入 Maven 依赖 。
+## Maven
 
 ``` xml
 <parent>
@@ -81,6 +79,27 @@
     <artifactId>scx-parent</artifactId>
     <version>{version}</version>
 </parent>
+```
+
+## 快速开始
+
+#### 1. 复制 [script.ps1](./script.ps1) 到您的项目根目录 。
+
+```
+your-project
+    ├── src
+    ├── pom.xml
+    └── script.ps1
+```
+
+#### 2. 使用 PowerShell 运行 [script.ps1](./script.ps1) 。
+
+```
+1. 运行项目
+2. 构建项目 (不包括依赖项)
+3. 构建项目 (包括依赖项)
+4. 仅复制依赖项
+0. 退出
 ```
 
 有关更多信息，请参阅 [文档](https://scx.cool/docs/scx/index.html)
