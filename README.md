@@ -99,7 +99,15 @@ $JAVA_HOME = YOUR_JAVA_HOME
 $MAVEN_HOME = YOUR_MAVEN_HOME
 ```
 
-#### 3. Run [script.ps1](./script.ps1) with PowerShell .
+#### 3. Edit properties in your pom.xml .
+
+```xml
+<properties>
+    <scx.mainClass>{your.main.class}</scx.mainClass>
+</properties>
+```
+
+#### 4. Run [script.ps1](./script.ps1) with PowerShell .
 
 ```
 1. Run project
