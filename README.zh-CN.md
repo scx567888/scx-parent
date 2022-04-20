@@ -102,7 +102,6 @@ $MAVEN_HOME = YOUR_MAVEN_HOME
 #### 3. 编辑您的 pom.xml 中的 properties 。
 
 ```xml
-
 <properties>
     <scx.mainClass>{your.main.class}</scx.mainClass>
 </properties>
