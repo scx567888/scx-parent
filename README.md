@@ -118,3 +118,7 @@ $MAVEN_HOME = YOUR_MAVEN_HOME
 ```
 
 For more information, see [docs](https://scx.cool/docs/scx/index.html)
+
+## Stats
+
+![Alt](https://repobeats.axiom.co/api/embed/597e26caedc0b7bd9b5b4293298c75ef4f9d21e7.svg "Repobeats analytics image")
