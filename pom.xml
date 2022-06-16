@@ -538,7 +538,7 @@
         <!-- *********************** 以下为依赖包版本 *********************** -->
         <vertx.version>4.3.1</vertx.version>
         <jackson.version>2.13.3</jackson.version>
-        <spring-framework.version>5.3.20</spring-framework.version>
+        <spring-framework.version>5.3.21</spring-framework.version>
         <hikaricp.version>5.0.1</hikaricp.version>
         <freemarker.version>2.3.31</freemarker.version>
         <bouncycastle.version>1.70</bouncycastle.version>
