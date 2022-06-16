@@ -182,7 +182,7 @@ function BuildProject()
 {
     SetOutputUrl
     Write-Host "开始打包 $PROJECT_NAME 版本为: $PROJECT_VERSION" -ForegroundColor Green
-    mvn clean package --define maven.test.skip = true
+    mvn clean package --define "maven.test.skip=true"
     Move-Item ".\target\$PROJECT_NAME-$PROJECT_VERSION.jar" $OUTPUT_URL
     Copy-Item ".\src\main\resources\*" $OUTPUT_URL -recurse
     CreateWindowsStartupScript
