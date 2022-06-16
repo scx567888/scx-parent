@@ -1,11 +1,11 @@
-﻿$JAVA_HOME = 'C:\Apps\jdk'
-$MAVEN_HOME = 'C:\Apps\ideaIU\plugins\maven\lib\maven3\bin'
+﻿#----------- 注意 因为 Powershell 无法正确识别无 BOM 头的 UTF-8 脚本 所以脚本修改后保存时请携带 BOM 头 -------------
 
+#-------------------------------------------- 环境变量参数 -----------------------------------------------
+param($JAVA_HOME, $MAVEN_HOME)
 
-#-----------注意 因为 Powershell 无法正确识别无 BOM 头的 UTF-8 脚本 所以脚本修改后保存时请携带 BOM 头-------------
-#-----------全局变量-------------
+#---------------------------------------------- 全局变量 ------------------------------------------------
 # 当前脚本的版本号
-$SCRIPT_VERSION = '0.0.4'
+$SCRIPT_VERSION = '0.0.5'
 #项目名称
 $PROJECT_NAME = '-'
 #项目版本
@@ -91,10 +91,18 @@ function SetPageCode()
 #设置 临时环境变量
 function SetTempEnvironmentVariables()
 {
-    $PathVariables = $JAVA_HOME + '\bin;' + $MAVEN_HOME
+    $PathVariables = ""
+    if ($False -eq [String]::IsNullOrEmpty($JAVA_HOME))
+    {
+        $PathVariables = $PathVariables + $JAVA_HOME + '\bin;'
+        $env:JAVA_HOME = $JAVA_HOME
+    }
+    if ($False -eq [String]::IsNullOrEmpty($MAVEN_HOME))
+    {
+        $PathVariables = $PathVariables + $MAVEN_HOME + ';'
+    }
     $env:Path = $env:Path + $PathVariables
     $env:JAVA_TOOL_OPTIONS = '-Dfile.encoding=UTF-8 -Duser.language=zh'
-    $env:JAVA_HOME = $JAVA_HOME
 }
 
 function ToZip($from, $to)
@@ -157,10 +165,11 @@ function BuildProjectWithoutLib()
 }
 
 #创建 windows 上的启动脚本 ( .bat 文件)
-function CreateWindowsStartupScript(){
+function CreateWindowsStartupScript()
+{
     # 脚本内容
     $ScriptContent =
-"@echo off
+    "@echo off
 CHCP 65001
 TITLE $PROJECT_NAME-$PROJECT_VERSION
 SET JAVA_TOOL_OPTIONS=-Dfile.encoding=UTF-8 -Duser.language=zh
@@ -173,7 +182,7 @@ function BuildProject()
 {
     SetOutputUrl
     Write-Host "开始打包 $PROJECT_NAME 版本为: $PROJECT_VERSION" -ForegroundColor Green
-    mvn clean package --define maven.test.skip=true
+    mvn clean package --define maven.test.skip = true
     Move-Item ".\target\$PROJECT_NAME-$PROJECT_VERSION.jar" $OUTPUT_URL
     Copy-Item ".\src\main\resources\*" $OUTPUT_URL -recurse
     CreateWindowsStartupScript
@@ -182,8 +191,8 @@ function BuildProject()
 #检查项目 并设置基本变量
 function CheckProject()
 {
-	$xmlFile = New-Object -Typename XML
-	$xmlFile.load('.\pom.xml')
+    $xmlFile = New-Object -Typename XML
+    $xmlFile.load('.\pom.xml')
     $script:PROJECT_NAME = $xmlFile.project.artifactId
     $script:PROJECT_VERSION = $xmlFile.project.version
 }
