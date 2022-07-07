@@ -175,7 +175,8 @@ TITLE $PROJECT_NAME-$PROJECT_VERSION
 SET JAVA_TOOL_OPTIONS=-Dfile.encoding=UTF-8 -Duser.language=zh
 java -jar $PROJECT_NAME-$PROJECT_VERSION.jar"
     # 将内容写入文件
-    Out-File -FilePath "$OUTPUT_URL\startup.bat" -Encoding utf8 -InputObject $ScriptContent
+    $UTF8NoBomEncoding = New-Object System.Text.UTF8Encoding $False
+    [System.IO.File]::WriteAllText("$OUTPUT_URL\startup.bat", $ScriptContent, $UTF8NoBomEncoding)
 }
 
 function BuildProject()
