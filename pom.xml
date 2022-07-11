@@ -483,6 +483,62 @@
                 <version>${netty5.version}</version>
             </dependency>
 
+            <!-- netty5 -->
+            <dependency>
+                <groupId>io.netty</groupId>
+                <artifactId>netty5-common</artifactId>
+                <version>${netty5.version}</version>
+            </dependency>
+
+            <!-- netty5 -->
+            <dependency>
+                <groupId>io.netty</groupId>
+                <artifactId>netty5-buffer</artifactId>
+                <version>${netty5.version}</version>
+            </dependency>
+
+            <!-- netty5 -->
+            <dependency>
+                <groupId>io.netty</groupId>
+                <artifactId>netty5-resolver</artifactId>
+                <version>${netty5.version}</version>
+            </dependency>
+
+            <!-- netty5 -->
+            <dependency>
+                <groupId>io.netty</groupId>
+                <artifactId>netty5-transport</artifactId>
+                <version>${netty5.version}</version>
+            </dependency>
+
+            <!-- netty5 -->
+            <dependency>
+                <groupId>io.netty</groupId>
+                <artifactId>netty5-codec</artifactId>
+                <version>${netty5.version}</version>
+            </dependency>
+
+            <!-- netty5 -->
+            <dependency>
+                <groupId>io.netty</groupId>
+                <artifactId>netty5-handler</artifactId>
+                <version>${netty5.version}</version>
+            </dependency>
+
+            <!-- netty5 -->
+            <dependency>
+                <groupId>io.netty</groupId>
+                <artifactId>netty5-codec-http</artifactId>
+                <version>${netty5.version}</version>
+            </dependency>
+
+            <!-- netty5 -->
+            <dependency>
+                <groupId>io.netty</groupId>
+                <artifactId>netty5-codec-http2</artifactId>
+                <version>${netty5.version}</version>
+            </dependency>
+
             <!-- 操作 二维码 -->
             <dependency>
                 <groupId>com.google.zxing</groupId>
