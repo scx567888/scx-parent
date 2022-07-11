@@ -47,11 +47,14 @@
         <img src="https://img.shields.io/badge/Guava-9c27b0" alt="Guava"/>
     </a>
     <br/>
+    <a target="_blank" href="https://github.com/netty/netty">
+        <img src="https://img.shields.io/badge/Netty-f44336" alt="Netty"/>
+    </a>
     <a target="_blank" href="https://github.com/zxing/zxing">
-        <img src="https://img.shields.io/badge/ZXing-f44336" alt="ZXing"/>
+        <img src="https://img.shields.io/badge/ZXing-ff8000" alt="ZXing"/>
     </a>
     <a target="_blank" href="https://github.com/apache/poi">
-        <img src="https://img.shields.io/badge/Apache POI-ff8000" alt="Apache POI"/>
+        <img src="https://img.shields.io/badge/Apache POI-d8b125" alt="Apache POI"/>
     </a>
     <a target="_blank" href="https://github.com/mysql/mysql-connector-j">
         <img src="https://img.shields.io/badge/MySQL Connector/J-98c510" alt="MySQL Connector/J"/>
@@ -102,6 +105,7 @@ $MAVEN_HOME = YOUR_MAVEN_HOME
 #### 3. Edit properties in your pom.xml .
 
 ```xml
+
 <properties>
     <scx.mainClass>{your.main.class}</scx.mainClass>
 </properties>
