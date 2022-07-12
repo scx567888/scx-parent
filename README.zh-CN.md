@@ -95,14 +95,7 @@ your-project
     └── script.ps1
 ```
 
-#### 2. 编辑 [script.ps1](./script.ps1) 中的全局变量 。
-
-```
-$JAVA_HOME = YOUR_JAVA_HOME
-$MAVEN_HOME = YOUR_MAVEN_HOME
-```
-
-#### 3. 编辑您的 pom.xml 中的 properties 。
+#### 2. 编辑您的 pom.xml 中的 properties 。
 
 ```xml
 <properties>
@@ -110,7 +103,7 @@ $MAVEN_HOME = YOUR_MAVEN_HOME
 </properties>
 ```
 
-#### 4. 使用 PowerShell 运行 [script.ps1](./script.ps1) 。
+#### 3. 使用 PowerShell 运行 [script.ps1](./script.ps1) 。
 
 ```
 1. 运行项目
