@@ -95,14 +95,7 @@ your-project
     └── script.ps1
 ```
 
-#### 2. Edit global variables in [script.ps1](./script.ps1) .
-
-```
-$JAVA_HOME = YOUR_JAVA_HOME
-$MAVEN_HOME = YOUR_MAVEN_HOME
-```
-
-#### 3. Edit properties in your pom.xml .
+#### 2. Edit properties in your pom.xml .
 
 ```xml
 <properties>
@@ -110,7 +103,7 @@ $MAVEN_HOME = YOUR_MAVEN_HOME
 </properties>
 ```
 
-#### 4. Run [script.ps1](./script.ps1) with PowerShell .
+#### 3. Run [script.ps1](./script.ps1) with PowerShell .
 
 ```
 1. Run project
