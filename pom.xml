@@ -8,7 +8,7 @@
     <packaging>pom</packaging>
     <name>scx-parent</name>
 
-    <version>8</version>
+    <version>9</version>
 
     <description>Base parent pom for SCX project</description>
     <url>https://github.com/scx567888/scx-parent</url>
@@ -632,7 +632,7 @@
         <netty5.version>5.0.0.Alpha3</netty5.version>
         <zxing.version>3.5.0</zxing.version>
         <poi.version>5.2.2</poi.version>
-        <mysql-connector-j.version>8.0.29</mysql-connector-j.version>
+        <mysql-connector-j.version>8.0.30</mysql-connector-j.version>
         <slf4j.version>2.0.0-alpha7</slf4j.version>
         <log4j2.version>2.18.0</log4j2.version>
 
