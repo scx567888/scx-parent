@@ -8,7 +8,7 @@
     <packaging>pom</packaging>
     <name>scx-parent</name>
 
-    <version>8</version>
+    <version>9</version>
 
     <description>Base parent pom for SCX project</description>
     <url>https://github.com/scx567888/scx-parent</url>
@@ -640,7 +640,7 @@
         <testng.version>7.6.1</testng.version>
 
         <!-- ************************ 以下为插件版本 ************************ -->
-        <maven.resources.plugin.version>3.2.0</maven.resources.plugin.version>
+        <maven.resources.plugin.version>3.3.0</maven.resources.plugin.version>
         <maven.compiler.plugin.version>3.10.1</maven.compiler.plugin.version>
         <maven.surefire.plugin.version>3.0.0-M7</maven.surefire.plugin.version>
         <maven.jar.plugin.version>3.2.2</maven.jar.plugin.version>
