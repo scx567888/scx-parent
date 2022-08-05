@@ -567,6 +567,20 @@
                 <version>${mysql-connector-j.version}</version>
             </dependency>
 
+            <!-- jna -->
+            <dependency>
+                <groupId>net.java.dev.jna</groupId>
+                <artifactId>jna</artifactId>
+                <version>${jna.version}</version>
+            </dependency>
+
+            <!-- jna -->
+            <dependency>
+                <groupId>net.java.dev.jna</groupId>
+                <artifactId>jna-platform</artifactId>
+                <version>${jna.version}</version>
+            </dependency>
+
             <!-- slf4j 日志框架 -->
             <dependency>
                 <groupId>org.slf4j</groupId>
@@ -633,6 +647,7 @@
         <zxing.version>3.5.0</zxing.version>
         <poi.version>5.2.2</poi.version>
         <mysql-connector-j.version>8.0.30</mysql-connector-j.version>
+        <jna.version>5.5.0</jna.version>
         <slf4j.version>2.0.0-alpha7</slf4j.version>
         <log4j2.version>2.18.0</log4j2.version>
 

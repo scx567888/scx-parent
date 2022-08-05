@@ -59,6 +59,9 @@
     <a target="_blank" href="https://github.com/mysql/mysql-connector-j">
         <img src="https://img.shields.io/badge/MySQL Connector/J-98c510" alt="MySQL Connector/J"/>
     </a>
+    <a target="_blank" href="https://github.com/java-native-access/jna">
+        <img src="https://img.shields.io/badge/JNA-37b484" alt="Java Native Access (JNA)"/>
+    </a>
     <a target="_blank" href="https://github.com/qos-ch/slf4j">
         <img src="https://img.shields.io/badge/SLF4J-44be16" alt="SLF4J"/>
     </a>
