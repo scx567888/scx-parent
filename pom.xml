@@ -639,7 +639,7 @@
         <spring-framework.version>5.3.22</spring-framework.version>
         <hikaricp.version>5.0.1</hikaricp.version>
         <freemarker.version>2.3.31</freemarker.version>
-        <bouncycastle.version>1.71</bouncycastle.version>
+        <bouncycastle.version>1.71.1</bouncycastle.version>
         <jasypt.version>1.9.3</jasypt.version>
         <thumbnailator.version>0.4.17</thumbnailator.version>
         <guava.version>31.1-jre</guava.version>
