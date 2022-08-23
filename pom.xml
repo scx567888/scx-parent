@@ -64,8 +64,7 @@
                         <!-- 编码 -->
                         <encoding>${scx.encoding}</encoding>
                         <!-- 指定编译时的 JDK 版本 -->
-                        <source>${_java.version}</source>
-                        <target>${_java.version}</target>
+                        <release>${_java.version}</release>
                     </configuration>
                 </plugin>
 
