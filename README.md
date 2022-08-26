@@ -60,10 +60,10 @@
         <img src="https://img.shields.io/badge/MySQL Connector/J-98c510" alt="MySQL Connector/J"/>
     </a>
     <a target="_blank" href="https://github.com/java-native-access/jna">
-        <img src="https://img.shields.io/badge/JNA-37b484" alt="Java Native Access (JNA)"/>
+        <img src="https://img.shields.io/badge/JNA-44be16" alt="Java Native Access (JNA)"/>
     </a>
     <a target="_blank" href="https://github.com/qos-ch/slf4j">
-        <img src="https://img.shields.io/badge/SLF4J-44be16" alt="SLF4J"/>
+        <img src="https://img.shields.io/badge/SLF4J-37b484" alt="SLF4J"/>
     </a>
     <a target="_blank" href="https://github.com/apache/logging-log4j2">
         <img src="https://img.shields.io/badge/Apache Log4j 2-29aaf5" alt="Apache Log4j 2"/>
