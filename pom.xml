@@ -642,7 +642,7 @@
         <jasypt.version>1.9.3</jasypt.version>
         <thumbnailator.version>0.4.17</thumbnailator.version>
         <guava.version>31.1-jre</guava.version>
-        <netty5.version>5.0.0.Alpha4</netty5.version>
+        <netty5.version>5.0.0.Alpha5</netty5.version>
         <zxing.version>3.5.0</zxing.version>
         <poi.version>5.2.3</poi.version>
         <mysql-connector-j.version>8.0.30</mysql-connector-j.version>
