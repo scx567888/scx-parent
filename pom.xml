@@ -633,7 +633,7 @@
         <scx.mainClass>null</scx.mainClass>
 
         <!-- *********************** 以下为依赖包版本 *********************** -->
-        <vertx.version>4.3.3</vertx.version>
+        <vertx.version>4.3.4</vertx.version>
         <jackson.version>2.13.4</jackson.version>
         <spring-framework.version>5.3.23</spring-framework.version>
         <hikaricp.version>5.0.1</hikaricp.version>
