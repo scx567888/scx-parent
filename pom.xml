@@ -8,7 +8,7 @@
     <packaging>pom</packaging>
     <name>scx-parent</name>
 
-    <version>10</version>
+    <version>11</version>
 
     <description>Base parent pom for SCX project</description>
     <url>https://github.com/scx567888/scx-parent</url>
@@ -634,7 +634,7 @@
 
         <!-- *********************** 以下为依赖包版本 *********************** -->
         <vertx.version>4.3.4</vertx.version>
-        <jackson.version>2.13.4.1</jackson.version>
+        <jackson.version>2.13.4</jackson.version>
         <spring-framework.version>5.3.23</spring-framework.version>
         <hikaricp.version>5.0.1</hikaricp.version>
         <freemarker.version>2.3.31</freemarker.version>
