@@ -18,6 +18,17 @@
         <img src="https://img.shields.io/github/license/scx567888/scx-parent" alt="license"/>
     </a>
 </p>
+<p align="center">
+    <a target="_blank" href="https://github.com/qos-ch/slf4j">
+        <img src="https://img.shields.io/badge/SLF4J-f44336" alt="SLF4J"/>
+    </a>
+    <a target="_blank" href="https://github.com/apache/logging-log4j2">
+        <img src="https://img.shields.io/badge/Apache Log4j 2-44be16" alt="Apache Log4j 2"/>
+    </a> 
+    <a target="_blank" href="https://github.com/cbeust/testng">
+        <img src="https://img.shields.io/badge/TestNG-9c27b0" alt="TestNG"/>
+    </a>
+</p>
 
 English | [简体中文](./README.zh-CN.md)
 
