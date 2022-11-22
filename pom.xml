@@ -8,7 +8,7 @@
     <packaging>pom</packaging>
     <name>scx-parent</name>
 
-    <version>12</version>
+    <version>13</version>
 
     <description>Base parent pom for SCX project</description>
     <url>https://github.com/scx567888/scx-parent</url>
@@ -338,6 +338,33 @@
 
     </build>
 
+    <dependencyManagement>
+        <dependencies>
+
+            <!-- slf4j 日志框架 -->
+            <dependency>
+                <groupId>org.slf4j</groupId>
+                <artifactId>slf4j-api</artifactId>
+                <version>${slf4j.version}</version>
+            </dependency>
+
+            <!-- log4j2 -->
+            <dependency>
+                <groupId>org.apache.logging.log4j</groupId>
+                <artifactId>log4j-api</artifactId>
+                <version>${log4j2.version}</version>
+            </dependency>
+
+            <!-- ******************* TestNG 测试包 ********************** -->
+            <dependency>
+                <groupId>org.testng</groupId>
+                <artifactId>testng</artifactId>
+                <version>${testng.version}</version>
+            </dependency>
+
+        </dependencies>
+    </dependencyManagement>
+
     <distributionManagement>
         <snapshotRepository>
             <id>sonatype-nexus-snapshots</id>
@@ -365,6 +392,13 @@
 
         <!-- ***************** 构建可执行jar时的默认启动类 ***************** -->
         <scx.mainClass>null</scx.mainClass>
+
+        <!-- *********************** 以下为依赖包版本 *********************** -->
+        <slf4j.version>2.0.4</slf4j.version>
+        <log4j2.version>2.19.0</log4j2.version>
+
+        <!-- ********************* 以下为测试依赖包版本 ********************** -->
+        <testng.version>7.6.1</testng.version>
 
         <!-- ************************ 以下为插件版本 ************************ -->
         <maven.resources.plugin.version>3.3.0</maven.resources.plugin.version>
