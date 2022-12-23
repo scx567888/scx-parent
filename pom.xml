@@ -395,7 +395,7 @@
         <scx.mainClass>null</scx.mainClass>
 
         <!-- *********************** 以下为依赖包版本 *********************** -->
-        <slf4j.version>2.0.5</slf4j.version>
+        <slf4j.version>2.0.6</slf4j.version>
         <log4j2.version>2.19.0</log4j2.version>
 
         <!-- ********************* 以下为测试依赖包版本 ********************** -->
