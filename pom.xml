@@ -398,7 +398,7 @@
         <log4j2.version>2.19.0</log4j2.version>
 
         <!-- ********************* 以下为测试依赖包版本 ********************** -->
-        <testng.version>7.6.1</testng.version>
+        <testng.version>7.7.0</testng.version>
 
         <!-- ************************ 以下为插件版本 ************************ -->
         <maven.resources.plugin.version>3.3.0</maven.resources.plugin.version>
