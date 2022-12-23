@@ -1,8 +1,9 @@
-/.idea/
-
-/target/
-/built/
-
+### IntelliJ IDEA ###
+.idea/
 *.iws
 *.iml
 *.ipr
+
+### Build targets ###
+target/
+built/
