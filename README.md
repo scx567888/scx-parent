@@ -1,5 +1,5 @@
 <p align="center">
-    <img src="https://scx.cool/logos/scx-parent-logo.svg" width="300px"  alt="scx-logo"/>
+    <img src="https://scx.cool/logos/scx-parent-logo.svg" width="300px"  alt="scx-parent-logo"/>
 </p>
 <p align="center">
     <a target="_blank" href="https://github.com/scx567888/scx-parent/actions/workflows/ci.yml">
@@ -77,4 +77,4 @@ For more information, see [docs](https://scx.cool/docs/scx/index.html)
 
 ## Stats
 
-![Alt](https://repobeats.axiom.co/api/embed/597e26caedc0b7bd9b5b4293298c75ef4f9d21e7.svg "Repobeats analytics image")
+![Alt](https://repobeats.axiom.co/api/embed/a5c465a2af6f38e88ba2481efd555dc1500460cd.svg "Repobeats analytics image")

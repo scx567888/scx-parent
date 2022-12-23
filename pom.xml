@@ -6,12 +6,13 @@
     <groupId>cool.scx</groupId>
     <artifactId>scx-parent</artifactId>
     <packaging>pom</packaging>
-    <name>scx-parent</name>
+    <version>14</version>
 
-    <version>13</version>
-
-    <description>Base parent pom for SCX project</description>
+    <name>SCX Parent</name>
     <url>https://github.com/scx567888/scx-parent</url>
+    <description>
+        Base parent pom for SCX project
+    </description>
 
     <developers>
         <developer>
@@ -394,11 +395,11 @@
         <scx.mainClass>null</scx.mainClass>
 
         <!-- *********************** 以下为依赖包版本 *********************** -->
-        <slf4j.version>2.0.4</slf4j.version>
+        <slf4j.version>2.0.5</slf4j.version>
         <log4j2.version>2.19.0</log4j2.version>
 
         <!-- ********************* 以下为测试依赖包版本 ********************** -->
-        <testng.version>7.6.1</testng.version>
+        <testng.version>7.7.0</testng.version>
 
         <!-- ************************ 以下为插件版本 ************************ -->
         <maven.resources.plugin.version>3.3.0</maven.resources.plugin.version>
@@ -411,7 +412,7 @@
         <maven.install.plugin.version>3.1.0</maven.install.plugin.version>
         <maven.deploy.plugin.version>3.0.0</maven.deploy.plugin.version>
         <maven.clean.plugin.version>3.2.0</maven.clean.plugin.version>
-        <maven.dependency.plugin.version>3.3.0</maven.dependency.plugin.version>
+        <maven.dependency.plugin.version>3.4.0</maven.dependency.plugin.version>
         <maven.project.info.reports.plugin.version>3.4.1</maven.project.info.reports.plugin.version>
         <maven.site.plugin.version>3.12.1</maven.site.plugin.version>
         <maven.exec.maven.plugin.version>3.1.0</maven.exec.maven.plugin.version>
