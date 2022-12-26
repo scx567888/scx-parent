@@ -373,9 +373,9 @@
         <scx.javaVersion>17</scx.javaVersion>
         <!-- 项目构建时的字符集编码 建议采用 UTF-8 -->
         <scx.encoding>UTF-8</scx.encoding>
-        <!-- 默认跳过 gpg 签名 ,(可通过 -D 参数覆写) -->
+        <!-- 默认跳过 gpg 签名 -->
         <gpg.skip>true</gpg.skip>
-        <!-- 默认跳过站点生成 ,(可通过 -D 参数覆写) -->
+        <!-- 默认跳过站点生成 -->
         <maven.site.skip>true</maven.site.skip>
 
         <!-- ********************* maven 约定配置 ********************* -->
