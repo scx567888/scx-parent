@@ -6,7 +6,7 @@
     <groupId>cool.scx</groupId>
     <artifactId>scx-parent</artifactId>
     <packaging>pom</packaging>
-    <version>14</version>
+    <version>15</version>
 
     <name>SCX Parent</name>
     <url>https://github.com/scx567888/scx-parent</url>
@@ -58,10 +58,8 @@
                     <artifactId>maven-compiler-plugin</artifactId>
                     <version>${maven.compiler.plugin.version}</version>
                     <configuration>
-                        <compilerArgs>
-                            <!-- 通知 JDK 使编译后 class 文件携带参数名称 -->
-                            <arg>-parameters</arg>
-                        </compilerArgs>
+                        <!-- 通知 JDK 使编译后 class 文件携带参数名称 -->
+                        <parameters>true</parameters>
                         <!-- 编码 -->
                         <encoding>${scx.encoding}</encoding>
                         <!-- 指定编译时的 JDK 版本 -->
@@ -241,7 +239,7 @@
                 <plugin>
                     <groupId>org.codehaus.mojo</groupId>
                     <artifactId>exec-maven-plugin</artifactId>
-                    <version>${maven.exec.maven.plugin.version}</version>
+                    <version>${exec.maven.plugin.version}</version>
                     <configuration>
                         <mainClass>${scx.mainClass}</mainClass>
                     </configuration>
@@ -385,6 +383,7 @@
         <_java.version>17</_java.version>
         <maven.compiler.source>${_java.version}</maven.compiler.source>
         <maven.compiler.target>${_java.version}</maven.compiler.target>
+        <maven.compiler.release>${_java.version}</maven.compiler.release>
 
         <!-- ************* 项目构建时的字符集编码 建议采用 UTF-8 ************* -->
         <scx.encoding>UTF-8</scx.encoding>
@@ -397,8 +396,6 @@
         <!-- *********************** 以下为依赖包版本 *********************** -->
         <slf4j.version>2.0.6</slf4j.version>
         <log4j2.version>2.19.0</log4j2.version>
-
-        <!-- ********************* 以下为测试依赖包版本 ********************** -->
         <testng.version>7.7.0</testng.version>
 
         <!-- ************************ 以下为插件版本 ************************ -->
@@ -415,7 +412,7 @@
         <maven.dependency.plugin.version>3.4.0</maven.dependency.plugin.version>
         <maven.project.info.reports.plugin.version>3.4.1</maven.project.info.reports.plugin.version>
         <maven.site.plugin.version>3.12.1</maven.site.plugin.version>
-        <maven.exec.maven.plugin.version>3.1.0</maven.exec.maven.plugin.version>
+        <exec.maven.plugin.version>3.1.0</exec.maven.plugin.version>
 
     </properties>
 
