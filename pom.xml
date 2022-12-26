@@ -166,10 +166,6 @@
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-gpg-plugin</artifactId>
                     <version>${maven-gpg-plugin.version}</version>
-                    <configuration>
-                        <!-- 这里默认跳过签名 -->
-                        <skip>true</skip>
-                    </configuration>
                     <executions>
                         <execution>
                             <!-- 这里默认的生命周期和 javadoc 相同 , 也是 verify , 但因为顺序靠后所以会在 javadoc 之后执行 -->
@@ -229,10 +225,6 @@
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-site-plugin</artifactId>
                     <version>${maven-site-plugin.version}</version>
-                    <configuration>
-                        <!-- 默认跳过站点生成 -->
-                        <skip>true</skip>
-                    </configuration>
                 </plugin>
 
                 <!-- 此插件支持使用 maven 命令直接运行项目 , 方便开发和测试 -->
@@ -290,10 +282,6 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-gpg-plugin</artifactId>
-                <configuration>
-                    <!-- 这里启用签名 -->
-                    <skip>false</skip>
-                </configuration>
             </plugin>
 
             <!-- install 插件 此处只是为了规范版本号 -->
@@ -385,8 +373,12 @@
         <scx.javaVersion>17</scx.javaVersion>
         <!-- 项目构建时的字符集编码 建议采用 UTF-8 -->
         <scx.encoding>UTF-8</scx.encoding>
+        <!-- 默认跳过 gpg 签名 ,(可通过 -D 参数覆写) -->
+        <gpg.skip>true</gpg.skip>
+        <!-- 默认跳过站点生成 ,(可通过 -D 参数覆写) -->
+        <maven.site.skip>true</maven.site.skip>
 
-        <!-- ********************* maven 配置 ********************* -->
+        <!-- ********************* maven 约定配置 ********************* -->
         <maven.compiler.source>${scx.javaVersion}</maven.compiler.source>
         <maven.compiler.target>${scx.javaVersion}</maven.compiler.target>
         <maven.compiler.release>${scx.javaVersion}</maven.compiler.release>
