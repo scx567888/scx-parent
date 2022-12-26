@@ -63,7 +63,7 @@
                         <!-- 编码 -->
                         <encoding>${scx.encoding}</encoding>
                         <!-- 指定编译时的 JDK 版本 -->
-                        <release>${_java.version}</release>
+                        <release>${scx.javaVersion}</release>
                     </configuration>
                 </plugin>
 
@@ -379,19 +379,19 @@
 
     <properties>
 
-        <!-- ********************** java (jdk) 版本 ********************** -->
-        <_java.version>17</_java.version>
-        <maven.compiler.source>${_java.version}</maven.compiler.source>
-        <maven.compiler.target>${_java.version}</maven.compiler.target>
-        <maven.compiler.release>${_java.version}</maven.compiler.release>
-
-        <!-- ************* 项目构建时的字符集编码 建议采用 UTF-8 ************* -->
+        <!-- 构建可执行jar时的默认启动类 -->
+        <scx.mainClass>null</scx.mainClass>
+        <!-- java 版本 -->
+        <scx.javaVersion>17</scx.javaVersion>
+        <!-- 项目构建时的字符集编码 建议采用 UTF-8 -->
         <scx.encoding>UTF-8</scx.encoding>
+
+        <!-- ********************* maven 配置 ********************* -->
+        <maven.compiler.source>${scx.javaVersion}</maven.compiler.source>
+        <maven.compiler.target>${scx.javaVersion}</maven.compiler.target>
+        <maven.compiler.release>${scx.javaVersion}</maven.compiler.release>
         <project.build.sourceEncoding>${scx.encoding}</project.build.sourceEncoding>
         <project.reporting.outputEncoding>${scx.encoding}</project.reporting.outputEncoding>
-
-        <!-- ***************** 构建可执行jar时的默认启动类 ***************** -->
-        <scx.mainClass>null</scx.mainClass>
 
         <!-- *********************** 以下为依赖包版本 *********************** -->
         <slf4j.version>2.0.6</slf4j.version>
