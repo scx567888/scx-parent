@@ -6,7 +6,7 @@
     <groupId>cool.scx</groupId>
     <artifactId>scx-parent</artifactId>
     <packaging>pom</packaging>
-    <version>14</version>
+    <version>15</version>
 
     <name>SCX Parent</name>
     <url>https://github.com/scx567888/scx-parent</url>
@@ -45,7 +45,7 @@
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-resources-plugin</artifactId>
-                    <version>${maven.resources.plugin.version}</version>
+                    <version>${maven-resources-plugin.version}</version>
                     <configuration>
                         <!-- 编码 -->
                         <encoding>${scx.encoding}</encoding>
@@ -56,16 +56,14 @@
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-compiler-plugin</artifactId>
-                    <version>${maven.compiler.plugin.version}</version>
+                    <version>${maven-compiler-plugin.version}</version>
                     <configuration>
-                        <compilerArgs>
-                            <!-- 通知 JDK 使编译后 class 文件携带参数名称 -->
-                            <arg>-parameters</arg>
-                        </compilerArgs>
+                        <!-- 通知 JDK 使编译后 class 文件携带参数名称 -->
+                        <parameters>true</parameters>
                         <!-- 编码 -->
                         <encoding>${scx.encoding}</encoding>
                         <!-- 指定编译时的 JDK 版本 -->
-                        <release>${_java.version}</release>
+                        <release>${scx.javaVersion}</release>
                     </configuration>
                 </plugin>
 
@@ -73,7 +71,7 @@
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-surefire-plugin</artifactId>
-                    <version>${maven.surefire.plugin.version}</version>
+                    <version>${maven-surefire-plugin.version}</version>
                     <configuration>
                         <!-- 编码字符集 -->
                         <encoding>${scx.encoding}</encoding>
@@ -86,7 +84,7 @@
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-jar-plugin</artifactId>
-                    <version>${maven.jar.plugin.version}</version>
+                    <version>${maven-jar-plugin.version}</version>
                     <configuration>
                         <!-- 此处我们将主类加入到描述文件中 方便程序启动 -->
                         <archive>
@@ -116,7 +114,7 @@
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-source-plugin</artifactId>
-                    <version>${maven.source.plugin.version}</version>
+                    <version>${maven-source-plugin.version}</version>
                     <!-- executions 表示要执行的操作 -->
                     <executions>
                         <execution>
@@ -137,7 +135,7 @@
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-javadoc-plugin</artifactId>
-                    <version>${maven.javadoc.plugin.version}</version>
+                    <version>${maven-javadoc-plugin.version}</version>
                     <configuration>
                         <!-- 生成的 Html 页面字符集 -->
                         <charset>${scx.encoding}</charset>
@@ -167,7 +165,7 @@
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-gpg-plugin</artifactId>
-                    <version>${maven.gpg.plugin.version}</version>
+                    <version>${maven-gpg-plugin.version}</version>
                     <configuration>
                         <!-- 这里默认跳过签名 -->
                         <skip>true</skip>
@@ -188,14 +186,14 @@
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-install-plugin</artifactId>
-                    <version>${maven.install.plugin.version}</version>
+                    <version>${maven-install-plugin.version}</version>
                 </plugin>
 
                 <!-- deploy 插件 此处只是为了规范版本号 -->
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-deploy-plugin</artifactId>
-                    <version>${maven.deploy.plugin.version}</version>
+                    <version>${maven-deploy-plugin.version}</version>
                 </plugin>
 
                 <!-- *********************** 以下插件默认不会绑定到任何 maven 生命周期中 *********************** -->
@@ -203,14 +201,14 @@
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-clean-plugin</artifactId>
-                    <version>${maven.clean.plugin.version}</version>
+                    <version>${maven-clean-plugin.version}</version>
                 </plugin>
 
                 <!-- 此插件用于管理项目的依赖项 , 目前会在脚本中单独调用 (不绑定到 maven 的任何生命周期阶段中) . 目前仅用来复制依赖项 -->
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-dependency-plugin</artifactId>
-                    <version>${maven.dependency.plugin.version}</version>
+                    <version>${maven-dependency-plugin.version}</version>
                     <!-- 复制所需的依赖项(第三方jar包) 到 lib 文件夹下 , 部署时如果有新增的依赖项记得更新部署项目的 lib 文件夹 -->
                     <configuration>
                         <outputDirectory>${project.build.directory}/lib</outputDirectory>
@@ -223,14 +221,14 @@
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-project-info-reports-plugin</artifactId>
-                    <version>${maven.project.info.reports.plugin.version}</version>
+                    <version>${maven-project-info-reports-plugin.version}</version>
                 </plugin>
 
                 <!-- 此插件用于为项目生成站点, 几乎用不到 -->
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-site-plugin</artifactId>
-                    <version>${maven.site.plugin.version}</version>
+                    <version>${maven-site-plugin.version}</version>
                     <configuration>
                         <!-- 默认跳过站点生成 -->
                         <skip>true</skip>
@@ -241,7 +239,7 @@
                 <plugin>
                     <groupId>org.codehaus.mojo</groupId>
                     <artifactId>exec-maven-plugin</artifactId>
-                    <version>${maven.exec.maven.plugin.version}</version>
+                    <version>${exec-maven-plugin.version}</version>
                     <configuration>
                         <mainClass>${scx.mainClass}</mainClass>
                     </configuration>
@@ -356,7 +354,7 @@
                 <version>${log4j2.version}</version>
             </dependency>
 
-            <!-- ******************* TestNG 测试包 ********************** -->
+            <!-- TestNG 测试包 -->
             <dependency>
                 <groupId>org.testng</groupId>
                 <artifactId>testng</artifactId>
@@ -381,41 +379,40 @@
 
     <properties>
 
-        <!-- ********************** java (jdk) 版本 ********************** -->
-        <_java.version>17</_java.version>
-        <maven.compiler.source>${_java.version}</maven.compiler.source>
-        <maven.compiler.target>${_java.version}</maven.compiler.target>
-
-        <!-- ************* 项目构建时的字符集编码 建议采用 UTF-8 ************* -->
+        <!-- 构建可执行jar时的默认启动类 -->
+        <scx.mainClass>null</scx.mainClass>
+        <!-- java 版本 -->
+        <scx.javaVersion>17</scx.javaVersion>
+        <!-- 项目构建时的字符集编码 建议采用 UTF-8 -->
         <scx.encoding>UTF-8</scx.encoding>
+
+        <!-- ********************* maven 配置 ********************* -->
+        <maven.compiler.source>${scx.javaVersion}</maven.compiler.source>
+        <maven.compiler.target>${scx.javaVersion}</maven.compiler.target>
+        <maven.compiler.release>${scx.javaVersion}</maven.compiler.release>
         <project.build.sourceEncoding>${scx.encoding}</project.build.sourceEncoding>
         <project.reporting.outputEncoding>${scx.encoding}</project.reporting.outputEncoding>
-
-        <!-- ***************** 构建可执行jar时的默认启动类 ***************** -->
-        <scx.mainClass>null</scx.mainClass>
 
         <!-- *********************** 以下为依赖包版本 *********************** -->
         <slf4j.version>2.0.6</slf4j.version>
         <log4j2.version>2.19.0</log4j2.version>
-
-        <!-- ********************* 以下为测试依赖包版本 ********************** -->
         <testng.version>7.7.0</testng.version>
 
         <!-- ************************ 以下为插件版本 ************************ -->
-        <maven.resources.plugin.version>3.3.0</maven.resources.plugin.version>
-        <maven.compiler.plugin.version>3.10.1</maven.compiler.plugin.version>
-        <maven.surefire.plugin.version>3.0.0-M7</maven.surefire.plugin.version>
-        <maven.jar.plugin.version>3.3.0</maven.jar.plugin.version>
-        <maven.source.plugin.version>3.2.1</maven.source.plugin.version>
-        <maven.javadoc.plugin.version>3.4.1</maven.javadoc.plugin.version>
-        <maven.gpg.plugin.version>3.0.1</maven.gpg.plugin.version>
-        <maven.install.plugin.version>3.1.0</maven.install.plugin.version>
-        <maven.deploy.plugin.version>3.0.0</maven.deploy.plugin.version>
-        <maven.clean.plugin.version>3.2.0</maven.clean.plugin.version>
-        <maven.dependency.plugin.version>3.4.0</maven.dependency.plugin.version>
-        <maven.project.info.reports.plugin.version>3.4.1</maven.project.info.reports.plugin.version>
-        <maven.site.plugin.version>3.12.1</maven.site.plugin.version>
-        <maven.exec.maven.plugin.version>3.1.0</maven.exec.maven.plugin.version>
+        <maven-resources-plugin.version>3.3.0</maven-resources-plugin.version>
+        <maven-compiler-plugin.version>3.10.1</maven-compiler-plugin.version>
+        <maven-surefire-plugin.version>3.0.0-M7</maven-surefire-plugin.version>
+        <maven-jar-plugin.version>3.3.0</maven-jar-plugin.version>
+        <maven-source-plugin.version>3.2.1</maven-source-plugin.version>
+        <maven-javadoc-plugin.version>3.4.1</maven-javadoc-plugin.version>
+        <maven-gpg-plugin.version>3.0.1</maven-gpg-plugin.version>
+        <maven-install-plugin.version>3.1.0</maven-install-plugin.version>
+        <maven-deploy-plugin.version>3.0.0</maven-deploy-plugin.version>
+        <maven-clean-plugin.version>3.2.0</maven-clean-plugin.version>
+        <maven-dependency-plugin.version>3.4.0</maven-dependency-plugin.version>
+        <maven-project-info-reports-plugin.version>3.4.1</maven-project-info-reports-plugin.version>
+        <maven-site-plugin.version>3.12.1</maven-site-plugin.version>
+        <exec-maven-plugin.version>3.1.0</exec-maven-plugin.version>
 
     </properties>
 
