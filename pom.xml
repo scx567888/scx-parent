@@ -63,7 +63,7 @@
                         <!-- 编码 -->
                         <encoding>${scx.encoding}</encoding>
                         <!-- 指定编译时的 JDK 版本 -->
-                        <release>${scx.release}</release>
+                        <release>${_java.version}</release>
                     </configuration>
                 </plugin>
 
@@ -380,8 +380,10 @@
     <properties>
 
         <!-- ********************** java (jdk) 版本 ********************** -->
-        <scx.release>17</scx.release>
-        <maven.compiler.release>${scx.release}</maven.compiler.release>
+        <_java.version>17</_java.version>
+        <maven.compiler.source>${_java.version}</maven.compiler.source>
+        <maven.compiler.target>${_java.version}</maven.compiler.target>
+        <maven.compiler.release>${_java.version}</maven.compiler.release>
 
         <!-- ************* 项目构建时的字符集编码 建议采用 UTF-8 ************* -->
         <scx.encoding>UTF-8</scx.encoding>
