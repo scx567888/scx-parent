@@ -354,7 +354,7 @@
                 <version>${log4j2.version}</version>
             </dependency>
 
-            <!-- ******************* TestNG 测试包 ********************** -->
+            <!-- TestNG 测试包 -->
             <dependency>
                 <groupId>org.testng</groupId>
                 <artifactId>testng</artifactId>
@@ -381,6 +381,7 @@
 
         <!-- ********************** java (jdk) 版本 ********************** -->
         <scx.release>17</scx.release>
+        <maven.compiler.release>${scx.release}</maven.compiler.release>
 
         <!-- ************* 项目构建时的字符集编码 建议采用 UTF-8 ************* -->
         <scx.encoding>UTF-8</scx.encoding>
