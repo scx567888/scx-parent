@@ -273,13 +273,13 @@
 
     <properties>
 
-        <!-- 构建 可执行jar 时的默认启动类 -->
+        <!-- 启动类 -->
         <scx.mainClass>null</scx.mainClass>
-        <!-- java 版本 -->
+        <!-- release 版本 -->
         <scx.javaVersion>17</scx.javaVersion>
-        <!-- 项目构建时的字符集编码 (默认为 UTF-8, 不建议更改) -->
+        <!-- 字符集编码 (默认为 UTF-8, 不建议更改) -->
         <scx.encoding>UTF-8</scx.encoding>
-        <!-- 依赖库打包后存放的位置 (相对与根目录, 默认为 lib, 不建议更改) -->
+        <!-- 依赖库存放的位置 (相对于根目录, 默认为 lib, 不建议更改) -->
         <scx.libraryDirectory>lib</scx.libraryDirectory>
 
         <!-- ********************* maven 配置 ********************* -->
@@ -287,12 +287,12 @@
         <project.build.sourceEncoding>${scx.encoding}</project.build.sourceEncoding>
         <!-- https://maven.apache.org/general.html#special-characters-site -->
         <project.reporting.outputEncoding>${scx.encoding}</project.reporting.outputEncoding>
-        <!-- maven-compiler-plugin : 编译 release 版本 -->
+        <!-- maven-compiler-plugin : 编译时 release 的版本 -->
         <maven.compiler.release>${scx.javaVersion}</maven.compiler.release>
-        <!-- maven-compiler-plugin : 目前 IntelliJ 识别项目版本号使用的是 source/target 而不是 release 所以添加到此 (后续可能移除)  -->
+        <!-- maven-compiler-plugin : 已被 release 取代, 仍然留存是为了 IntelliJ 能够正确识别项目语言级别 (后续可能移除) -->
         <maven.compiler.source>${scx.javaVersion}</maven.compiler.source>
         <maven.compiler.target>${scx.javaVersion}</maven.compiler.target>
-        <!-- maven-compiler-plugin : 通知 JDK 使编译后 class 文件携带参数名称 -->
+        <!-- maven-compiler-plugin : 编译时 携带参数名称 -->
         <maven.compiler.parameters>true</maven.compiler.parameters>
         <!-- maven-source-plugin : 在打包时排除所有资源文件 -->
         <maven.source.excludeResources>true</maven.source.excludeResources>
@@ -302,7 +302,7 @@
         <level>private</level>
         <!-- maven-gpg-plugin : 默认跳过 gpg 签名 -->
         <gpg.skip>true</gpg.skip>
-        <!-- maven-dependency-plugin : 复制所需的依赖项(第三方jar包) 到指定目录下 -->
+        <!-- maven-dependency-plugin : 复制所需的依赖库(第三方jar包) 到指定目录下 -->
         <outputDirectory>${project.build.directory}/${scx.libraryDirectory}</outputDirectory>
         <!-- maven-dependency-plugin : 包含的 scope -->
         <includeScope>compile</includeScope>
