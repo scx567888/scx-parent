@@ -275,7 +275,7 @@
 
     <properties>
 
-        <!-- 构建可执行jar时的默认启动类 -->
+        <!-- 构建 可执行jar 时的默认启动类 -->
         <scx.mainClass>null</scx.mainClass>
         <!-- java 版本 -->
         <scx.javaVersion>17</scx.javaVersion>
