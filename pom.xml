@@ -281,7 +281,7 @@
         <scx.javaVersion>17</scx.javaVersion>
         <!-- 项目构建时的字符集编码 建议采用 UTF-8 -->
         <scx.encoding>UTF-8</scx.encoding>
-        <!-- 依赖库打包后存放的位置 (相对与根目录) -->
+        <!-- 依赖库打包后存放的位置 (相对与根目录,默认为 lib, 不建议更改) -->
         <scx.libraryDirectory>lib</scx.libraryDirectory>
 
         <!-- ********************* maven 配置 ********************* -->
