@@ -59,10 +59,6 @@
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-resources-plugin</artifactId>
                     <version>${maven-resources-plugin.version}</version>
-                    <configuration>
-                        <!-- 编码 -->
-                        <encoding>${scx.encoding}</encoding>
-                    </configuration>
                 </plugin>
 
                 <!-- 此插件用于设置 java 程序编译时的参数 -->
@@ -70,14 +66,6 @@
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-compiler-plugin</artifactId>
                     <version>${maven-compiler-plugin.version}</version>
-                    <configuration>
-                        <!-- 通知 JDK 使编译后 class 文件携带参数名称 -->
-                        <parameters>true</parameters>
-                        <!-- 编码 -->
-                        <encoding>${scx.encoding}</encoding>
-                        <!-- 指定编译时的 JDK 版本 -->
-                        <release>${scx.javaVersion}</release>
-                    </configuration>
                 </plugin>
 
                 <!-- 设置测试 -->
@@ -85,12 +73,6 @@
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-surefire-plugin</artifactId>
                     <version>${maven-surefire-plugin.version}</version>
-                    <configuration>
-                        <!-- 编码字符集 -->
-                        <encoding>${scx.encoding}</encoding>
-                        <!-- 是否忽略失败的单元测试 -->
-                        <testFailureIgnore>false</testFailureIgnore>
-                    </configuration>
                 </plugin>
 
                 <!-- 此插件用于将项目打包为 可执行 jar 包-->
@@ -105,7 +87,7 @@
                                 <!-- 添加 classpath 到描述文件中 -->
                                 <addClasspath>true</addClasspath>
                                 <!-- classpath 前缀 -->
-                                <classpathPrefix>lib</classpathPrefix>
+                                <classpathPrefix>${scx.libraryDirectory}</classpathPrefix>
                                 <!-- 默认启动类 -->
                                 <mainClass>${scx.mainClass}</mainClass>
                                 <!-- 添加默认实现条目 -->
@@ -138,10 +120,6 @@
                             </goals>
                         </execution>
                     </executions>
-                    <configuration>
-                        <!-- 在打包时排除所有资源文件 -->
-                        <excludeResources>true</excludeResources>
-                    </configuration>
                 </plugin>
 
                 <!-- 此插件用于打包 java doc -->
@@ -149,18 +127,6 @@
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-javadoc-plugin</artifactId>
                     <version>${maven-javadoc-plugin.version}</version>
-                    <configuration>
-                        <!-- 生成的 Html 页面字符集 -->
-                        <charset>${scx.encoding}</charset>
-                        <!-- 生成的 Html 文件编码  -->
-                        <docencoding>${scx.encoding}</docencoding>
-                        <!-- (source) 源文件 编码 -->
-                        <encoding>${scx.encoding}</encoding>
-                        <!-- 默认作者 -->
-                        <defaultAuthor>scx567888</defaultAuthor>
-                        <!-- javadoc:fix 修复级别 (private 为全部修复) -->
-                        <level>private</level>
-                    </configuration>
                     <executions>
                         <execution>
                             <id>scx-javadoc-jar</id>
@@ -218,12 +184,6 @@
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-dependency-plugin</artifactId>
                     <version>${maven-dependency-plugin.version}</version>
-                    <!-- 复制所需的依赖项(第三方jar包) 到 lib 文件夹下 , 部署时如果有新增的依赖项记得更新部署项目的 lib 文件夹 -->
-                    <configuration>
-                        <outputDirectory>${project.build.directory}/lib</outputDirectory>
-                        <!-- 只包含运行依赖项 -->
-                        <includeScope>compile</includeScope>
-                    </configuration>
                 </plugin>
 
                 <!-- 此插件用于生成有关项目的报告信息 -->
@@ -245,9 +205,6 @@
                     <groupId>org.codehaus.mojo</groupId>
                     <artifactId>exec-maven-plugin</artifactId>
                     <version>${exec-maven-plugin.version}</version>
-                    <configuration>
-                        <mainClass>${scx.mainClass}</mainClass>
-                    </configuration>
                 </plugin>
 
             </plugins>
@@ -324,17 +281,37 @@
         <scx.javaVersion>17</scx.javaVersion>
         <!-- 项目构建时的字符集编码 建议采用 UTF-8 -->
         <scx.encoding>UTF-8</scx.encoding>
-        <!-- 默认跳过 gpg 签名 -->
-        <gpg.skip>true</gpg.skip>
-        <!-- 默认跳过站点生成 -->
-        <maven.site.skip>true</maven.site.skip>
+        <!-- 依赖库打包后存放的位置 (相对与根目录) -->
+        <scx.libraryDirectory>lib</scx.libraryDirectory>
 
-        <!-- ********************* maven 约定配置 ********************* -->
-        <maven.compiler.source>${scx.javaVersion}</maven.compiler.source>
-        <maven.compiler.target>${scx.javaVersion}</maven.compiler.target>
-        <maven.compiler.release>${scx.javaVersion}</maven.compiler.release>
+        <!-- ********************* maven 配置 ********************* -->
+        <!-- https://maven.apache.org/general.html#encoding-warning -->
         <project.build.sourceEncoding>${scx.encoding}</project.build.sourceEncoding>
+        <!-- https://maven.apache.org/general.html#special-characters-site -->
         <project.reporting.outputEncoding>${scx.encoding}</project.reporting.outputEncoding>
+        <!-- maven-compiler-plugin : 编译 release 版本 -->
+        <maven.compiler.release>${scx.javaVersion}</maven.compiler.release>
+        <!-- IntelliJ HAS issues with just release and tries to add source/target so adding them here -->
+<!--        <maven.compiler.source>${scx.javaVersion}</maven.compiler.source>-->
+<!--        <maven.compiler.target>${scx.javaVersion}</maven.compiler.target>-->
+        <!-- maven-compiler-plugin : 通知 JDK 使编译后 class 文件携带参数名称 -->
+        <maven.compiler.parameters>true</maven.compiler.parameters>
+        <!-- maven-source-plugin : 在打包时排除所有资源文件 -->
+        <maven.source.excludeResources>true</maven.source.excludeResources>
+        <!-- maven-javadoc-plugin : 默认作者 -->
+        <defaultAuthor>scx567888</defaultAuthor>
+        <!-- maven-javadoc-plugin : javadoc:fix 修复级别 (private 为全部修复) -->
+        <level>private</level>
+        <!-- maven-gpg-plugin : 默认跳过 gpg 签名 -->
+        <gpg.skip>true</gpg.skip>
+        <!-- maven-dependency-plugin : 复制所需的依赖项(第三方jar包) 到指定目录下 -->
+        <outputDirectory>${project.build.directory}/${scx.libraryDirectory}</outputDirectory>
+        <!-- maven-dependency-plugin : 包含的 scope -->
+        <includeScope>compile</includeScope>
+        <!-- maven-site-plugin : 默认跳过站点生成 -->
+        <maven.site.skip>true</maven.site.skip>
+        <!-- exec-maven-plugin : mainClass -->
+        <exec.mainClass>${scx.mainClass}</exec.mainClass>
 
         <!-- *********************** 以下为依赖包版本 *********************** -->
         <slf4j.version>2.0.6</slf4j.version>
