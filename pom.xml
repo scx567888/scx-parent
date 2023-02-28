@@ -269,7 +269,7 @@
     <properties>
 
         <!-- 启动类 -->
-        <scx.mainClass>null</scx.mainClass>
+        <scx.mainClass/>
         <!-- release 版本 -->
         <scx.javaVersion>17</scx.javaVersion>
         <!-- 字符集编码 (默认为 UTF-8, 不建议更改) -->
