@@ -41,6 +41,7 @@ English | [简体中文](./README.zh-CN.md)
     <groupId>cool.scx</groupId>
     <artifactId>scx-parent</artifactId>
     <version>{version}</version>
+    <relativePath/>
 </parent>
 ```
 

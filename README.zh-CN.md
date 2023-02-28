@@ -41,6 +41,7 @@
     <groupId>cool.scx</groupId>
     <artifactId>scx-parent</artifactId>
     <version>{version}</version>
+    <relativePath/>
 </parent>
 ```
 
