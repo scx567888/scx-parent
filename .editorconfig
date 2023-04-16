@@ -1,4 +1,4 @@
-;   版本: 1
+;   版本: 2
 root = true
 
 [*]
@@ -147,6 +147,7 @@ ij_css_hex_color_long_format = false
 ij_css_hex_color_short_format = false
 
 [*.json]
+indent_size = 2
 ;   空格
 ;   大括号
 ij_json_spaces_within_braces = false
@@ -194,3 +195,6 @@ ij_vue_interpolation_new_line_before_end_delimiter = true
 ;   重新格式化时
 ;   格式化表
 ij_markdown_format_tables = true
+
+[{*.yaml,*.yml}]
+indent_size = 2
