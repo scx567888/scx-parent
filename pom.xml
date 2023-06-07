@@ -323,7 +323,7 @@
         <maven-deploy-plugin.version>3.1.1</maven-deploy-plugin.version>
         <maven-clean-plugin.version>3.2.0</maven-clean-plugin.version>
         <maven-dependency-plugin.version>3.6.0</maven-dependency-plugin.version>
-        <maven-project-info-reports-plugin.version>3.4.4</maven-project-info-reports-plugin.version>
+        <maven-project-info-reports-plugin.version>3.4.5</maven-project-info-reports-plugin.version>
         <maven-site-plugin.version>3.12.1</maven-site-plugin.version>
         <exec-maven-plugin.version>3.1.0</exec-maven-plugin.version>
 
