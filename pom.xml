@@ -6,7 +6,7 @@
     <groupId>cool.scx</groupId>
     <artifactId>scx-parent</artifactId>
     <packaging>pom</packaging>
-    <version>18</version>
+    <version>19</version>
 
     <name>SCX Parent</name>
     <url>https://github.com/scx567888/scx-parent</url>
@@ -239,33 +239,6 @@
 
     </build>
 
-    <dependencyManagement>
-        <dependencies>
-
-            <!-- slf4j 日志框架 -->
-            <dependency>
-                <groupId>org.slf4j</groupId>
-                <artifactId>slf4j-api</artifactId>
-                <version>${slf4j.version}</version>
-            </dependency>
-
-            <!-- log4j2 -->
-            <dependency>
-                <groupId>org.apache.logging.log4j</groupId>
-                <artifactId>log4j-api</artifactId>
-                <version>${log4j2.version}</version>
-            </dependency>
-
-            <!-- TestNG 测试包 -->
-            <dependency>
-                <groupId>org.testng</groupId>
-                <artifactId>testng</artifactId>
-                <version>${testng.version}</version>
-            </dependency>
-
-        </dependencies>
-    </dependencyManagement>
-
     <properties>
 
         <!-- 启动类 -->
@@ -305,11 +278,6 @@
         <maven.site.skip>true</maven.site.skip>
         <!-- exec-maven-plugin : mainClass -->
         <exec.mainClass>${scx.mainClass}</exec.mainClass>
-
-        <!-- *********************** 以下为依赖包版本 *********************** -->
-        <slf4j.version>2.0.7</slf4j.version>
-        <log4j2.version>2.20.0</log4j2.version>
-        <testng.version>7.8.0</testng.version>
 
         <!-- ************************ 以下为插件版本 ************************ -->
         <maven-resources-plugin.version>3.3.1</maven-resources-plugin.version>
