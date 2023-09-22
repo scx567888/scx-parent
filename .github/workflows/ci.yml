@@ -9,11 +9,11 @@ jobs:
       - name: 签出代码
         uses: actions/checkout@v3
 
-      - name: 安装 JDK 17
+      - name: 安装 JDK
         uses: actions/setup-java@v3
         with:
           distribution: temurin
-          java-version: 17
+          java-version: 21-ea
           cache: maven
 
       - name: 使用 Maven 进行构建和测试
