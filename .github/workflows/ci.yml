@@ -13,7 +13,7 @@ jobs:
         uses: actions/setup-java@v3
         with:
           distribution: temurin
-          java-version: 21-ea
+          java-version: 21
           cache: maven
 
       - name: 使用 Maven 进行构建和测试
