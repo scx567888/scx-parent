@@ -1,0 +1,20 @@
+name: CI
+on: [ push, pull_request ]
+jobs:
+  build-and-test:
+    name: 构建和测试
+    runs-on: ubuntu-latest
+    steps:
+
+      - name: 签出代码
+        uses: actions/checkout@v4
+
+      - name: 安装 JDK
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: 21
+          cache: maven
+
+      - name: 使用 Maven 进行构建和测试
+        run: mvn package --batch-mode
