@@ -6,7 +6,7 @@
     <groupId>cool.scx</groupId>
     <artifactId>scx-parent</artifactId>
     <packaging>pom</packaging>
-    <version>24</version>
+    <version>25</version>
 
     <name>SCX Parent</name>
     <url>https://github.com/scx567888/scx-parent</url>
