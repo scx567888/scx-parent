@@ -246,7 +246,7 @@
         <!-- 启动类 -->
         <scx.mainClass/>
         <!-- release 版本 -->
-        <scx.javaVersion>23</scx.javaVersion>
+        <scx.javaVersion>24</scx.javaVersion>
         <!-- 字符集编码 (默认为 UTF-8, 不建议更改) -->
         <scx.encoding>UTF-8</scx.encoding>
         <!-- 依赖库存放的位置 (相对于根目录, 默认为 lib, 不建议更改) -->
